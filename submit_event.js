@@ -1,10 +1,28 @@
 /**
  * Created by Андрей on 05.12.2015.
  */
-jQuery(".auth_button").click(function(event){
+function main() {
+    initListenEvent();
+}
+function initListenEvent () {
+    jQuery(".auth_button").click(handlerClickSubmit);
+}
+function handlerClickSubmit(event) {
+    var data = {};
     event.stopPropagation();
     event.preventDefault();
-    var login = jQuery('.login').val();
-    var password = jQuery('.password').val();
-    console.log(login, password);
-});
+    data.login = jQuery('.login').val();
+    data.password = jQuery('.password').val();
+    sendRequest(data);
+}
+function sendRequest(data) {
+    jQuery.ajax({
+        type: 'GET',
+        url: 'auth.php',
+        data: {login: '', password: ''},
+        dataType: 'json',
+        success: function sendRequstSuccess () { alert('Какое-нибудь сообщение, что все окей'); }
+        }
+    )
+}
+jQuery(document).ready(main);
