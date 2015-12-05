@@ -1,6 +1,9 @@
-input.login, input.password {
-    margin-bottom: 5px;
+.auth-form {
+    border: 1px solid #666;
+    padding: 5px;
+    width: 173px;
+
 }
-form.auth-form {
-    border: 1px solid #000
+.login, .password {
+    margin-bottom: 5px;
 }
