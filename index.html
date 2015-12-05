@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <title>Форма входа</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
 <body>
-    <form class="auth-form" name="auth-form">
-      <input class="login" type="text" placeholder="Логин"><br>
-      <input class="password" type="text" placeholder="Пароль"><br>
-      <input class="auth_button" type="submit" value="Войти">
-    </form>
+<form class="auth-form" name="auth-form">
+    <input class="login" name="login" type="text" placeholder="Логин"><br>
+    <input class="password" name="password" type="text" placeholder="Пароль"><br>
+    <input class="auth_button" type="submit" value="Войти">
+</form>
+<script>
+    var login, password;
+    $(".auth_button").click(function(){
+        login = $('#login').val();
+        password = $('#password').val();
+        console.log(login, password);
+    });
+
+</script>
 </body>
 </html>
