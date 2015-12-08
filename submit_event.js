@@ -19,9 +19,10 @@ function sendRequest(data) {
     jQuery.ajax({
         type: 'GET',
         url: 'auth.php',
-        data: {login: '', password: ''},
+        data: data,
         dataType: 'json',
-        success: function sendRequstSuccess () { alert('Какое-нибудь сообщение, что все окей'); }
+        success: function sendRequstSuccess () { alert('Какое-нибудь сообщение, что все окей');},
+        error: function sendRequstSuccess () { alert('Что-то пошло не так...'); }
         }
     )
 }
